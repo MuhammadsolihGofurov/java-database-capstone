@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Portal - Patient Appointments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 min-h-screen flex font-sans">
+
+<aside class="w-72 bg-teal-800 text-white flex-shrink-0 hidden lg:flex flex-col shadow-2xl">
+    <div class="p-8 border-b border-teal-700/50">
+        <div class="flex items-center space-x-3 mb-6">
+            <i class="fas fa-clinic-medical text-3xl text-teal-300"></i>
+            <span class="text-xl font-black tracking-tighter">SMART CLINIC</span>
+        </div>
+        <div class="flex items-center space-x-4 bg-teal-900/50 p-4 rounded-2xl border border-teal-700">
+            <img src="https://ui-avatars.com/api/?name=Dr+John+Doe&background=14b8a6&color=fff" class="w-12 h-12 rounded-xl border-2 border-teal-400/30" alt="Doctor">
+            <div>
+                <p class="text-sm font-bold">Dr. John Doe</p>
+                <p class="text-[10px] text-teal-300 font-medium uppercase tracking-wider">Cardiologist</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="flex-1 px-4 py-6 space-y-2">
+        <a href="#" class="flex items-center space-x-3 p-4 rounded-xl hover:bg-teal-700/50 transition-all text-teal-100">
+            <i class="fas fa-chart-pie w-5"></i>
+            <span class="font-semibold">Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 p-4 rounded-xl bg-white/10 text-white shadow-inner border border-white/5">
+            <i class="fas fa-calendar-alt w-5 text-teal-300"></i>
+            <span class="font-bold">My Appointments</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 p-4 rounded-xl hover:bg-teal-700/50 transition-all text-teal-100">
+            <i class="fas fa-notes-medical w-5"></i>
+            <span class="font-semibold">Prescriptions</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 p-4 rounded-xl hover:bg-teal-700/50 transition-all text-teal-100">
+            <i class="fas fa-users w-5"></i>
+            <span class="font-semibold">Patient Records</span>
+        </a>
+    </nav>
+
+    <div class="p-6">
+        <button class="w-full py-3 bg-teal-900 text-teal-400 rounded-xl text-xs font-bold hover:text-white transition-all">
+            <i class="fas fa-sign-out-alt mr-2"></i> LOGOUT
+        </button>
+    </div>
+</aside>
+
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+    <header class="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-10">
+        <div>
+            <h2 class="text-2xl font-black text-slate-800">Appointments Schedule</h2>
+            <p class="text-xs text-slate-400 font-medium">Viewing all upcoming patient visits</p>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="bg-teal-50 text-teal-700 px-4 py-2 rounded-lg text-xs font-bold border border-teal-100">
+                <i class="far fa-calendar-check mr-2"></i> April 27, 2026
+            </div>
+        </div>
+    </header>
+
+    <div class="flex-1 overflow-y-auto p-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Total Today</p>
+                <p class="text-3xl font-black text-slate-800">12</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm border-l-4 border-l-teal-500">
+                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Upcoming</p>
+                <p class="text-3xl font-black text-teal-600">04</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+                <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Completed</p>
+                <p class="text-3xl font-black text-slate-800">08</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-slate-50 border-b border-slate-200">
+                <tr>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Patient Name</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Time</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Purpose</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+                    <th class="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                    <td class="px-8 py-6">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Miller&background=f1f5f9&color=64748b" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-sm font-bold text-slate-800">Sarah Miller</p>
+                                <p class="text-[10px] text-slate-400">P-10023</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-8 py-6 text-sm font-bold text-slate-700">02:30 PM</td>
+                    <td class="px-8 py-6 text-xs text-slate-500 font-medium">Monthly Checkup</td>
+                    <td class="px-8 py-6">
+                        <span class="px-3 py-1 bg-amber-50 text-amber-600 rounded-full text-[10px] font-black uppercase border border-amber-100">Waiting</span>
+                    </td>
+                    <td class="px-8 py-6">
+                        <button class="text-teal-600 hover:text-teal-800 font-bold text-xs">Start Session</button>
+                    </td>
+                </tr>
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                    <td class="px-8 py-6">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://ui-avatars.com/api/?name=Michael+Ross&background=f1f5f9&color=64748b" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-sm font-bold text-slate-800">Michael Ross</p>
+                                <p class="text-[10px] text-slate-400">P-10045</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-8 py-6 text-sm font-bold text-slate-700">03:15 PM</td>
+                    <td class="px-8 py-6 text-xs text-slate-500 font-medium">Follow-up</td>
+                    <td class="px-8 py-6">
+                        <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase border border-blue-100">Confirmed</span>
+                    </td>
+                    <td class="px-8 py-6">
+                        <button class="text-slate-400 font-bold text-xs cursor-not-allowed">Start Session</button>
+                    </td>
+                </tr>
+                <tr class="opacity-60 bg-slate-50/30">
+                    <td class="px-8 py-6">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://ui-avatars.com/api/?name=Jessica+Pearson&background=f1f5f9&color=64748b" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="text-sm font-bold text-slate-800">Jessica Pearson</p>
+                                <p class="text-[10px] text-slate-400">P-10011</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-8 py-6 text-sm font-bold text-slate-700">01:00 PM</td>
+                    <td class="px-8 py-6 text-xs text-slate-500 font-medium">Consultation</td>
+                    <td class="px-8 py-6">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-400 rounded-full text-[10px] font-black uppercase border border-slate-200">Completed</span>
+                    </td>
+                    <td class="px-8 py-6">
+                        <i class="fas fa-check-circle text-teal-500"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
